@@ -79,8 +79,9 @@ function App() {
 
   //Fetching cities based on selected country
   const country_change = async (e) => {
-    var target_value,
-      target_text = "";
+    console.log("e:", e);
+    var target_value = "";
+    var target_text = "";
     if (e.constructor.name == "SyntheticBaseEvent") {
       target_value = e.target.value;
       target_text = e.target.selectedOptions[0].text;
@@ -89,6 +90,8 @@ function App() {
       target_value = e.value;
       target_text = e.text;
     }
+    console.log("target_value:", target_value);
+    console.log("target_text:", target_text);
     if (target_value != "") {
       // alert("hi");
       // setcountry_name(target_value);
