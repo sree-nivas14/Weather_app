@@ -40,6 +40,7 @@ function App() {
     setcountry_list(countriesList);
   }, []);
 
+  //Automatically fetching the location
   const success = (pos) => {
     const crd = pos.coords;
     axios
@@ -60,6 +61,7 @@ function App() {
       });
   };
 
+  //Permission not granted
   function error(err) {
     $(".alert-primary").show();
     console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -158,6 +160,7 @@ function App() {
     }
   }
 
+  //Reseting value
   function reset_value() {
     setCity();
     setCountry();
