@@ -225,7 +225,7 @@ alert-dismissible fade show text-center"
                 value={city_name}
               >
                 <option value="">Please Select City</option>
-                {city_list.map((e) => (
+                {city_list.sort().map((e) => (
                   <option value={e}>{e}</option>
                 ))}
               </select>
