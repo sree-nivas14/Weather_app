@@ -198,13 +198,13 @@ alert-dismissible fade show text-center"
         ></button>
       </div>
       <>
-        <div className="container col-sm-12 col-md-6  card">
+        <div className="container col-sm-12 col-md-6  card card_data">
           <h1 className="text-center my-3">Weather App</h1>
           <div
-            className="row justify-content-around align-items-center my-2"
+            className="row justify-content-around align-items-center"
             style={{ padding: "0 10px" }}
           >
-            <div className="col-xl-4 m-2">
+            <div className="col-xl-4 ">
               <select
                 id="country"
                 className="custom-select"
@@ -217,7 +217,7 @@ alert-dismissible fade show text-center"
                 ))}
               </select>
             </div>
-            <div className="col-xl-4 m-2">
+            <div className="col-xl-4 my-3">
               <select
                 id="city"
                 className="custom-select"
