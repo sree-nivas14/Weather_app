@@ -230,7 +230,7 @@ alert-dismissible fade show text-center"
                 ))}
               </select>
             </div>
-            <div className="col-xl-3 text-center">
+            <div className="col-xl-3 text-center mb-1">
               <input
                 type="submit"
                 className="btn btn-primary"
@@ -240,7 +240,7 @@ alert-dismissible fade show text-center"
             </div>
           </div>
           <div
-            className="card mx-2 my-2 p-3 mx-4 center_card"
+            className="card my-2 p-3 mx-4 center_card"
             style={{ backgroundColor: "#f1f1f1" }}
           >
             <div>
