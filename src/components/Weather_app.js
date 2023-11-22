@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./Weather_app.css";
 import axios from "axios";
 import $ from "jquery";
-var worldMapData = require("city-state-country");
 
 function App() {
   const [city_list, setcity_list] = useState([]);
@@ -34,10 +33,21 @@ function App() {
 
   //Fetching countries
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success, error, options);
-    const countriesList = worldMapData.getAllCountries();
-    console.log(countriesList);
-    setcountry_list(countriesList);
+    const fetchData = async () => {
+      try {
+        document.getElementById("fp-container").style.visibility = "visible";
+        navigator.geolocation.getCurrentPosition(success, error, options);
+        // Simulate an asynchronous action (e.g., fetching data from an API)
+        const countriesList = require("city-state-country").getAllCountries();
+        console.log(countriesList);
+        setcountry_list(countriesList);
+        document.getElementById("fp-container").style.visibility = "hidden";
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData(); // Call the async function within useEffect
   }, []);
 
   //Automatically fetching the location
@@ -380,10 +390,11 @@ align-items-center"
           id="fp-container"
           style={{ visibility: "hidden" }}
         >
-          <i
+          <div class="spinner"></div>
+          {/* <i
             className="fas fa-spinner fa-pulse fp-loader"
             style={{ fontSize: "70px" }}
-          ></i>
+          ></i> */}
         </div>
       </>
     </div>
